@@ -29,7 +29,6 @@ public class Tema1_Ses5 {
                 }
                 System.out.println(suma);
                 suma = suma+contor;
-
             }
         }
         System.out.println("\n"+suma);
