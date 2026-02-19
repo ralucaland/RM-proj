@@ -12,8 +12,9 @@ public class Tema1_Ses5 {
     Creeaza o metoda care primeste 2 parametrii: start si end. Afiseaza toate numerele cuprinse intre aceste doua numere
 */
     public static void main(String[] args) {
+        System.out.println("H.1 Suma");
         CALCULATOR_par(1,50);
-
+        System.out.println("H.2 Produsul");
     }
 
     public static void CALCULATOR_par(int x, int y) {
@@ -26,7 +27,9 @@ public class Tema1_Ses5 {
                 if(contor<y) {
                     System.out.print(",");
                 }
+                System.out.println(suma);
                 suma = suma+contor;
+
             }
         }
         System.out.println("\n"+suma);
