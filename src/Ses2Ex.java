@@ -26,7 +26,6 @@ public class Ses2Ex {
 
         System.out.println("\nExercitiu 4");
         System.out.println("Ma numesc "+Nume+ " , am "+Varsta+" ani, si am "+ NrAnim +" animale de companie"  );
-
         System.out.println("\nExercitiu 5");
         int a=10; int b=11;
         if (a%2==0){
