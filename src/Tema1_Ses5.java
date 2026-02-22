@@ -153,5 +153,4 @@ public class Tema1_Ses5 {
             System.out.println(contor);
         }
     }
-
 }
