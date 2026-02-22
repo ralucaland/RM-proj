@@ -126,7 +126,6 @@ public class Tema1_Ses5 {
         return g*h;
     }
 
-
     public static void CALCULATOR_par(int x, int y) {
         int suma=0;
 
