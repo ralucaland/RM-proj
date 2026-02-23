@@ -18,18 +18,19 @@ public class Tema1_Ses5 {
         boolean prezenta = false;
         int zSaptamana= 4; // ex. 6=sambata, 1=luni
 
+//ex B
         int x = 6; int y =10; double z = 15.;
         int suma= x+y;
         double medie = (suma+ z)/3;
 
-
+//ex C
        String tipAcces="";
        if(varsta>18){
            tipAcces= "Acces permis";
         }else{
            tipAcces= "Acces interzis";
        }
-
+// ex D
        int sumaD = 0;
        for(int contor= 20; contor<=50; contor++){
        sumaD= contor+sumaD ;
@@ -39,10 +40,10 @@ public class Tema1_Ses5 {
 
 
         System.out.println("1A.Prezenta Cursuri");
-        //PrezentaCursuri(varsta,inaltime, prezenta);
-        //PrezentaCursuri(varsta, inaltime,true);
-        //PrezentaCursuri(30,1.61, false);
-        System.out.println("1B.Orar Cursuri:");
+        PrezentaCursuri(varsta,inaltime, prezenta);
+        PrezentaCursuri(varsta, inaltime,true);
+        PrezentaCursuri(30,1.61, false);
+        System.out.println("2A.Orar Cursuri:");
         System.out.println(Orar(varsta,inaltime, zSaptamana));
 
         System.out.print("1B:");
@@ -52,20 +53,22 @@ public class Tema1_Ses5 {
         System.out.print("1D:");
         System.out.println(sumaD);
         System.out.print("1E:");
+
+        //ex E
         int r=10;
         while(r>=1){
             System.out.println(r);
             r--;
         }
+
         System.out.print("1F:");
         Invat();
-
         System.out.print("1G:");
         System.out.println(inmultire( 18, 17));
 
 
-        //System.out.println("1H. Suma");
-        //CALCULATOR_par(1,50);
+        System.out.println("1H. Suma");
+        CALCULATOR_par(1,50);
 
         System.out.print("1I:");
         System.out.println(mediaI( 6, 41,36));
@@ -119,13 +122,15 @@ public class Tema1_Ses5 {
 
     }
 
+    //exercitiul F
     public static void Invat(){
         System.out.println("Invat Java!");
     }
+    // G
     public static int inmultire( int g, int h){
         return g*h;
     }
-
+    //H
     public static void CALCULATOR_par(int x, int y) {
         int suma=0;
 
@@ -143,11 +148,11 @@ public class Tema1_Ses5 {
 
         System.out.println("\n"+suma);
     }
-
+    // ex I
     public static int mediaI( int g, int h,int j){
         return (g+h+j)/3;
     }
-
+    // ex J
     public static void startEnd(int start,int end){
         for(int contor = start; contor<=end; contor++){
             System.out.println(contor);
