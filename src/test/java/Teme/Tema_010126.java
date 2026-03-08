@@ -1,4 +1,4 @@
-/*
+package Teme;/*
 1.Deschide un site -> deschide browser, navigheaza catre un URL (la alegere), inchide browserul
 2.Verifica titlul paginii -> deschide URL-ul (la alegere, sau https://example.com/), ia titlul paginii, verifica cu Assert titlul
 a.Hint: getTitle(), Assert.assertTrue

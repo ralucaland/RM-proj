@@ -1,4 +1,4 @@
-/*3.Creaza o clasa care are doua teste: unul care navigheaza la https://example.com/ si inchide browserul;
+package Teme;/*3.Creaza o clasa care are doua teste: unul care navigheaza la https://example.com/ si inchide browserul;
 unul care navigheaza la https://www.apple.com/ si inchide browserul.
 3.Creaza o clasa care are doua teste: unul care navigheaza la https://example.com/ si inchide browserul;
 unul care navigheaza la https://www.apple.com/ si inchide browserul.
@@ -63,7 +63,6 @@ public class Tema_010126_ex4 {
         driver.quit();
         driverSecond.quit();
     }
-
 
 
 }
