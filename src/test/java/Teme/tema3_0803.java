@@ -8,16 +8,10 @@ import org.testng.annotations.Test;
 public class tema3_0803 {
     WebDriver driver = new ChromeDriver();
 
-
-    @BeforeMethod
-    public void openCodeAcademyWebPage() {
-        driver.get("https://demoqa.com/automation-practice-form");
-
-    }
-
     //a.Gaseste campul First Name folosind Xpath, bazat pe placeholder
     @Test
     public void filds() {
+        driver.get("https://demoqa.com/automation-practice-form");
         WebElement firstName = driver.findElement(By.xpath("//input[@placeholder='First Name']"));
         // b.Introdu in acel camp valoarea “Test”
         firstName.sendKeys("Test");
@@ -60,6 +54,37 @@ public class tema3_0803 {
         System.out.println("Butonul este: " + buttonClose);
         //buttonClose.click();--> nu merge butonul in sine, comanda e buna
 
+    }
+
+    //2.Creaza un test, pornind de la URL-ul https://demoqa.com/webtables
+    WebDriver driver2 = new ChromeDriver();
+
+
+    //a.Da click pe butonul ‘Add’
+    @Test
+    public void ADD(){
+        driver2.get("https://demoqa.com/webtables");
+        WebElement ADD =driver2.findElement(By.id("addNewRecordButton"));
+        ADD.click();
+
+        //b.Completeaza toate campurile din pop-up-ul care se deschide
+        WebElement first =driver2.findElement(By.id("firstName"));
+        first.sendKeys("ABCD");
+        WebElement last =driver2.findElement(By.id("lastName"));
+        last.sendKeys("GHIJ");
+        WebElement email =driver2.findElement(By.id("userEmail"));
+        email.sendKeys("user@email.com");
+        WebElement age =driver2.findElement(By.id("age"));
+        age.sendKeys("39");
+        WebElement Salary =driver2.findElement(By.id("salary"));
+        Salary.sendKeys("18000");
+
+        WebElement department =driver2.findElement(By.id("department"));
+        department.sendKeys("it");
+
+        //c.Da click pe butonul Submit
+        department = driver2.findElement(By.id("submit"));
+        department.click();
     }
 }
 
