@@ -1,4 +1,4 @@
-package Teme;
+package Teme.tema6;
 
 
 import org.openqa.selenium.*;
@@ -13,7 +13,7 @@ import org.testng.annotations.Test;
 import java.time.Duration;
 import java.util.Set;
 
-public class Tema6_2903 {
+public class Tema6_ex1si2_2903 {
 
     WebDriver driver;
     WebDriverWait wait;
@@ -41,41 +41,33 @@ public class Tema6_2903 {
     @Test
     public void clickCodeFundation() {
 
-        // 1. Găsește și dă click pe link-ul "Code Foundations"
-        driver.findElement(By.cssSelector("a[href='/catalog/subject/code-foundations']")).click();
+        // tabul 1 este deja deschis din @BeforeMethod -> Codecademy
+        System.out.println("Tab 1: " + driver.getTitle());
 
-        // 2. Deschide un TAB nou și face automat switch pe el
+        // deschide un tab nou
         driver.switchTo().newWindow(WindowType.TAB);
 
-        // 3. Accesează site-ul W3Schools în tab-ul nou
+        // în tabul 2 deschide W3Schools
         driver.get("https://www.w3schools.com/java/#gsc.tab=0");
 
-        // 3b.Accept pop-up (iframe)
-        wait.until(ExpectedConditions.frameToBeAvailableAndSwitchToIt(By.id("fast-cmp-iframe")));
-
-        // 3c. Click  pe butonul Accept
-        driver.findElement(By.xpath("//button[text()='Accept']")).click();
-
-        // 3d. Revine la pagina principală (iese din iframe)
-        driver.switchTo().defaultContent();
-        //4.afișează titlul ambelor taburi
+        // afișează titlul tabului 2
         System.out.println("Tab 2: " + driver.getTitle());
 
-        // revine în tabul 1
+        // revine pe tabul principal
         driver.switchTo().window(firstTab);
 
-        // tabul 1
-        System.out.println("Tab 1: " + driver.getTitle());
-          }
+        // afișează din nou titlul tabului 1
+        System.out.println("Back to Tab 1: " + driver.getTitle());
+    }
+
     //2. Creează un test care:
 
     @Test
     public void test2 () {
-        //deschide 2 taburi
+        //deschide 2 taburi-->primul e in @befor
         driver.switchTo().newWindow(WindowType.TAB);
         driver.get("https://www.w3schools.com/java/#gsc.tab=0");
 
-        // aici e momentul corect
         Set<String> tabs = driver.getWindowHandles();
 
         String tab1 = "";
@@ -97,18 +89,23 @@ public class Tema6_2903 {
         driver.switchTo().window(tab2);
         Assert.assertTrue(driver.getTitle().contains("Java"));
 }
+    @Test
+    public void test3(){
+        //deschide 2 taburi
+        //deschide 2 taburi-->primul e in @befor
+        driver.switchTo().newWindow(WindowType.TAB);
+        driver.get("https://www.w3schools.com/java/#gsc.tab=0");
+
+// închide unul cu driver.close()
+//revine pe tabul principal
+// Verifică dacă încă ești pe pagina corectă
+//Ruleaza testul folosing fisier .xml*/
+    }
 }
 
 
-
-
 /*
-3. Creează un test care:
-            ●deschide 2 taburi
-●închide unul cu driver.close()
-●revine pe tabul principal
-● Verifică dacă încă ești pe pagina corectă
-●Ruleaza testul folosing fisier .xml
+
 4. Creează un test care:
             1.Deschide https://practicesoftwaretesting.com/
             2.Navighează pe o categorie
