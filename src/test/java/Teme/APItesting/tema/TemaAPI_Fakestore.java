@@ -1,10 +1,9 @@
 package Teme.APItesting.tema;
 
-import Config.tests.ConfigTests;
+import Teme.Config.ConfigTests;
 import io.restassured.http.ContentType;
 import org.testng.annotations.Test;
 import static io.restassured.RestAssured.given;
-import static java.lang.Math.log;
 import static org.hamcrest.Matchers.*;
 
 public class TemaAPI_Fakestore {
@@ -14,7 +13,7 @@ public class TemaAPI_Fakestore {
 
         given()
                 .when()
-                .get(ConfigTests.Facke_store_api_domain + ConfigTests.PRODUCT_BY_ID_ENDPOINT)
+                .get(ConfigTests.Fake_store_api_domain + ConfigTests.PRODUCT_BY_ID_ENDPOINT)
                 .then()
                 //.log().body()
                     .statusCode(200)
@@ -29,7 +28,7 @@ public class TemaAPI_Fakestore {
 
         given()
                 .when()
-                .get(ConfigTests.Facke_store_api_domain + ConfigTests.PRODUCTS_ENDPOINT)
+                .get(ConfigTests.Fake_store_api_domain + ConfigTests.PRODUCTS_ENDPOINT)
                 .then()
                 //.log().body()
                 .statusCode(200)
@@ -50,7 +49,7 @@ public class TemaAPI_Fakestore {
                 .contentType(ContentType.JSON)
                 .body(payload)
                 .when()
-                .post(ConfigTests.Facke_store_api_domain + ConfigTests.PRODUCTS_ENDPOINT)
+                .post(ConfigTests.Fake_store_api_domain + ConfigTests.PRODUCTS_ENDPOINT)
                 .then()
                 .log().body()
                 // Requirement says 200, but FakeStore API returns 201 Created for POST /products.
