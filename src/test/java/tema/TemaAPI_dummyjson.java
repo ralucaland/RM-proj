@@ -1,8 +1,8 @@
-package Teme.APItesting.tema;
+package tema;
 
-import Teme.Config.ConfigTests;
+import Config.ConfigTests;
 import io.restassured.http.ContentType;
-import Teme.DataAPI_tests.Data;
+import DataAPI_tests.Data;
 
 import org.testng.annotations.Test;
 import java.util.List;

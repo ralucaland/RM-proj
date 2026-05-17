@@ -1,7 +1,7 @@
-package Teme.Utils;
+package Utils;
 
-import Teme.Config.ConfigTests;
-import Teme.DataAPI_tests.Data;
+import Config.ConfigTests;
+import DataAPI_tests.Data;
 import io.restassured.response.Response;
 
 import static io.restassured.RestAssured.given;

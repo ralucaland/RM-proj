@@ -1,4 +1,4 @@
-package Teme.Config;
+package Config;
 
 public class ConfigTests {
 

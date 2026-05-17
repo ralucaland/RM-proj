@@ -1,4 +1,4 @@
-package Teme.DataAPI_tests;
+package DataAPI_tests;
 
 public class Data {
 

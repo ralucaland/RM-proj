@@ -1,6 +1,6 @@
-package Teme.APItesting.tema;
+package tema;
 
-import Teme.Config.ConfigTests;
+import Config.ConfigTests;
 import io.restassured.response.Response;
 import org.testng.annotations.Test;
 
