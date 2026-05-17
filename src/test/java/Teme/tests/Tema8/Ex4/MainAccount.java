@@ -1,0 +1,14 @@
+package Teme.tests.Tema8.Ex4;
+
+public class MainAccount{
+
+    public static void main(String[] args) {
+
+        numeClasa admin = new numeClasa();
+
+        admin.setUsername("admin123");
+
+        admin.login();       // metoda mostenita
+        admin.deleteUser();  // metoda proprie
+    }
+}
