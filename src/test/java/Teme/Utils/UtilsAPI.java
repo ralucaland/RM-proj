@@ -8,7 +8,7 @@ import static io.restassured.RestAssured.given;
 
 public class UtilsAPI {
 
-    public static String AccessToken() {
+     public static String getAccessToken() {
 
         String body = """
                 {

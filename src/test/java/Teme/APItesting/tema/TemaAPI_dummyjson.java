@@ -1,15 +1,16 @@
 package Teme.APItesting.tema;
 
-import Teme.Config.ConfigTests;
 import io.restassured.http.ContentType;
+import Teme.Utils.UtilsAPI;
+import Teme.Config.ConfigTests;
 import Teme.DataAPI_tests.Data;
 
 import org.testng.annotations.Test;
 import java.util.List;
 import static io.restassured.RestAssured.given;
 import static org.hamcrest.Matchers.*;
-
 import io.restassured.response.Response;
+
 
 
 
@@ -64,10 +65,13 @@ public class TemaAPI_dummyjson{
 
         String body = """
             {
-                "username": "emilys",
-                "password": "emilyspass"
+                "username": "%s",
+                "password": "%s"
             }
-            """;
+            """.formatted(
+                Data.LOGIN_USERNAME,
+                Data.LOGIN_PASSWORD
+        );
 
         Response response = given()
                 .baseUri(ConfigTests.Dummy_Domain)
@@ -85,6 +89,25 @@ public class TemaAPI_dummyjson{
 
         System.out.println("TOKEN:");
         System.out.println(token);
+    }
+    @Test
+    public void getAuthenticatedUserTest() {
+
+        String token = UtilsAPI.getAccessToken();
+
+        Response response = given()
+                .baseUri(ConfigTests.Dummy_Domain)
+                .header("Authorization", "Bearer " + token)
+                .when()
+                .get(ConfigTests.AUTH_ME_ENDPOINT_dummy);
+
+        response.prettyPrint();
+
+        response.then()
+                .statusCode(200)
+                .body("username", equalTo(Data.LOGIN_USERNAME))
+                .body("firstName", notNullValue())
+                .body("email", notNullValue());
     }
 }
 
